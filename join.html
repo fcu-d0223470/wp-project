@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>桌遊管理系統->會員登入</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<style>
+		select{
+			height:30px;
+			font-size:16px;
+			margin:5 auto;
+			font-family: "微軟正黑體", Arial, Verdana, Helvetica, sans-serif;
+		}
+	</style>
+	
+	<script type="text/javascript">
+      function check_data()
+      {
+        if (document.myForm.account.value.length == 0)
+        {
+          alert("「使用者帳號」未填寫!");
+          return false;
+        }
+        if (document.myForm.account.value.length > 20 || document.myForm.account.value.length <= 5)
+        {
+          alert("「使用者帳號」請勿小於6或大於20個字!");
+          return false;
+        }
+        if (document.myForm.password.value.length == 0)
+        {
+          alert("「使用者密碼」未填寫!");
+          return false;
+        }
+        if (document.myForm.password.value.length > 20 || document.myForm.password.value.length <= 5)
+        {
+          alert("「使用者密碼」請勿小於6或大於20個字!");
+          return false;
+        }
+        if (document.myForm.re_password.value.length == 0)
+        {
+          alert("「密碼確認」未填寫!");
+          return false;
+        }
+        if (document.myForm.password.value != document.myForm.re_password.value)
+        {
+          alert("「密碼確認」錯誤!!! 請檢查密碼!!!");
+          return false;
+        }
+        if (document.myForm.fname.value.length == 0)
+        {
+          alert("您的姓氏未填寫！");
+          return false;
+        }
+        if (document.myForm.lname.value.length == 0)
+        {
+          alert("您的名字未填寫！");
+          return false;
+        }
+        if (document.myForm.cellphone.value.length == 0)
+        {
+          alert("您的行動電話未填寫！");
+          return false;
+        }
+        if (document.myForm.email.value.length == 0)
+        {
+          alert("您的E-mail未填寫！");
+          return false;
+        }
+        myForm.submit();
+      }
+	  
+	  <!--防重複提交
+	  JavaScript:window.history.forwar
+	  
+	  d(1);
+	  
+	  -->
+    </script>
+	
+</head>
+
+<body>
+
+	<div class="brand">
+		<a href="index.html"><img src="img/header_id.png" alt="TRAVEL HUNT" ></a>
+	</div>
+
+    <!-- <div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div>-->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">桌遊管理系統</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+                <ul class="nav navbar-nav" style="">
+                    <li>
+                        <a href="index.html">回首頁</a>
+                    </li>
+                    <li>
+                        <a href="about.html">桌遊資訊</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">會員專區</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">相關問題</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row" >
+            <div class="box col-lg-6 col-lg-offset-3">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>會員註冊</strong>
+                    </h2>
+                    <hr>
+					<div class="col-md-12">
+						<img class="img-responsive img-border-left" src="img/slide-2.jpg" alt="">
+					</div>
+                    <form role="form" name="myForm">
+                        <div class="row">
+                            <div class="form-group col-md-5">
+                                <label>姓氏</label>
+                                <input name="fname" type="text" class="form-control" placeholder="*姓氏">
+                            </div>
+							<div class="form-group col-md-5">
+                                <label>名字</label>
+                                <input name="lname" type="text" class="form-control" placeholder="*名字">
+                            </div>
+                            <label>性別</label> 
+							<select name="sex" class="form-group col-md-2">
+								<option value="男">男</option>
+								<option value="女">女</option>
+							</select>
+							<div class="form-group col-md-12">
+                                <label>帳號</label>
+                                <input name="account" type="text" class="form-control" placeholder="*帳號">
+                            </div>
+							<div class="form-group col-md-12">
+                                <label>密碼</label>
+                                <input name="password" type="password" class="form-control" placeholder="*密碼">
+                            </div>
+							<div class="form-group col-md-12">
+                                <label>確認密碼</label>
+                                <input name="re_password" type="password" class="form-control" placeholder="*確認密碼">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>E-Mail </label>
+                                <input name="email" type="email" class="form-control" placeholder="*E-Mail">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>電話號碼</label>
+                                <input name="cellphone" type="tel" class="form-control" placeholder="*電話號碼">
+                            </div>
+							<div class="form-group col-md-12">
+                                <label>住家地址</label>
+                                <input name="address" type="text" class="form-control" placeholder="住家地址">
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="form-group col-md-12">
+                                <label>個人資訊</label>
+                                <textarea name="url" class="form-control" rows="6" placeholder="個人資訊(有*號的請務必填完，方便系統服務作業)"></textarea>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <input type="hidden" name="save" value="contact">
+								<input type="button" value="送出資料" 	onClick="check_data()" class="btn btn-default">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+		
+    </div>
+    <!-- /.container -->
+
+    <footer>
+        <div class="container" >
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>郭子奇股份有限公司  版權所有  電話 : 09-xxxx-5678<br>
+            地址 : 台中市西屯區逢甲大學育樂館2樓</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+</body>
+
+</html>
